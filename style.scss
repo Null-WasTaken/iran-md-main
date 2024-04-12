@@ -1,0 +1,314 @@
+$background: #000;
+$secondary-bg: #121212;
+$heading-color: #F5C518;
+
+@font-face {
+    font-family:IR-sans;
+    src: url(./Assets/Fonts/A-Iranian-Sans/Iranian-Sans.ttf);
+}
+
+@mixin FlexBox($dir) {
+    display: flex;
+    flex-direction: $dir;
+}
+
+.v-line {
+    width: 2px;
+    height: 30px;
+    background: #383838;
+}
+
+.none {
+    display: none !important;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: $background;
+    color: #fff;
+
+    font-family: IR-sans , sans-serif;
+}
+
+.container {
+    margin: auto;
+}
+
+.nav {
+    @include FlexBox(row-reverse);
+    align-items: center;
+    justify-content: space-around;
+    background: $secondary-bg;
+    height: 50px;
+
+    &-ls {
+        @include FlexBox(row);
+        align-items: center;
+    
+        div {
+            @include FlexBox(row);
+            align-items: center;
+        }
+        a {
+            font-size: 1rem;
+            line-height: 10px;
+            padding-left: 2px;
+            padding-right: 20px;
+            text-decoration: none;
+            color: #fff;
+            text-align: center;
+        }
+    }
+
+    &-rs {
+        @include FlexBox(row-reverse);
+        align-items: center;
+
+        img {
+            margin: 0 20px 0 20px;
+            width: 60px;
+        }
+
+        &-hamburger {
+            cursor: pointer;
+
+        }
+
+        input {
+            min-width: 700px;
+            border: none;
+            background: #fff;
+            height: 35px;
+            border-radius: 5px;
+            color: #000;
+            text-align: right;
+            margin: 0 20px 0 20px;
+        }
+
+    }
+
+}
+
+
+.hero {
+    margin: auto;
+    width: 85%;
+    margin-top: 40px;
+    @include FlexBox(row-reverse);
+    align-items: flex-start;
+    text-align: right;
+
+    &-slider{
+        background: url("/Assets/Images/Dune.jpg") no-repeat center;
+        background-size: cover;
+        width: 100%;
+        height: 700px;
+
+        &-info {
+            height: 100%;            
+            @include FlexBox(row-reverse);
+            align-items: flex-end;
+            img {
+                width: 260px;
+            }
+
+            &-txt {
+                padding: 50px;
+                @include FlexBox(row-reverse);
+                align-items: flex-end;  
+
+                div {
+                    margin-right: 60px;
+                    height: 220px;
+                    @include FlexBox(column);
+                    align-items: flex-end;
+                    gap: 12px;
+
+
+                    a {
+                        text-decoration: none;
+                        background: $heading-color;
+                        color: #000;
+                        padding: 17px 20px 17px 20px;
+                        border-radius: 7px;
+                        width: 100px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.content {
+    width: 85%;
+    margin: auto;
+    margin-top: 50px;
+    text-align: right;
+
+    h1 {
+        color: $heading-color;
+        font-weight: bold;
+        border-right: 3px solid $heading-color;
+        padding: 15px;
+    }
+
+    &-movie-slider {
+        width: 100%;
+        @include FlexBox(row-reverse);
+        gap: 30px;
+        align-items: flex-end;
+
+        &-card {
+            @include FlexBox(column);
+            width: 218px;
+            height: 420px;
+            align-items: flex-end;
+            background: $secondary-bg;
+            img {
+                width: 100%;
+            }
+
+            a {
+                color: #4A99EF;
+                text-decoration: none;
+                width: 140px;
+                text-align: center;
+                background: #2C2C2C;
+                border-radius: 7px;
+                padding: 10px 20px 10px 20px;
+                margin-right: 16px;
+            }
+
+            h3 {
+                margin-right: 16px;
+            }
+
+            span {
+                color: $heading-color;
+                margin-right: 16px;
+                margin-top: 10px;
+            }
+        }
+
+
+    }
+
+}
+
+// Login Form Styles
+
+.login-container {
+    @include FlexBox(column);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.form {
+    width: 400px;
+    height: 480px;
+    border-radius: 20px;
+    @include FlexBox(column);
+    align-items: center;
+    background: $secondary-bg;
+
+    input {
+        width: 200px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        text-align: right;
+        padding-right: 10px
+    }
+
+    &-switcher {
+        @include FlexBox(row);
+        justify-content: space-between;
+        width: 250px;
+        margin-top: 30px;
+
+        &-login {
+            background: $heading-color;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #000;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        &-sign-up {
+            background: $heading-color;
+            width: 100px;
+            height: 50px;
+            font-size: 0.7rem;
+            text-align: center;
+            color: #000;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .not-active {
+            background: $secondary-bg;
+            border:  0.8px solid #383838;
+            transition: ease-in-out 0.5s;
+            color: #fff;
+            
+            &:hover {
+                border: 1px solid #fff;
+            }
+        }
+
+    }
+
+    &-login , &-signup {
+        @include FlexBox(column);
+        width: 100%;
+        height: 300px;
+
+        form {
+            height: 100%;
+            @include FlexBox(column);
+            align-items: center;
+            justify-content: space-around;
+            
+            button {
+                background: $heading-color;
+                width: 100px;
+                padding: 9px;
+                border: none;
+                border-radius: 6px;
+                font-size: 1rem;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+
+            a {
+                color: #fff;
+                font-size: 0.8rem
+            }
+            
+            div {
+                @include FlexBox(column);
+                text-align: right;
+                margin-top: 7px;
+
+                span {
+                    color: $heading-color;
+                    font-size: 0.9rem;
+                }
+
+                input {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}

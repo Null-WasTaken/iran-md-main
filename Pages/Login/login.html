@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRMDB</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="form">
+        <div class="form-switcher">
+            <div class="form-switcher-login" id="switcher-login">
+            <h2 class="log-in" onclick="SwitchLogin()">ورود</h2>
+            </div>
+            <h3>|</h3>  
+            <div class="form-switcher-sign-up not-active sign-up" id="switcher-signup">
+                <h2 class="sign-up" onclick="SwtichSignUp()">ثبت نام</h2>
+            </div>
+        </div>
+        <div class="form-login" id="login">
+            <form action="#" method="get">
+                <div>      
+                <span>ایمیل</span>
+                <input type="text" name="user-name">
+                </div>
+
+                <div>    
+                    <span>پسورد</span>
+                    <input type="password" name="password">
+                    </div>
+                <a href="#">پسورد خود را فراموش کرده اید؟</a>
+                <button>ورود</button>
+            </form>
+        </div>
+
+        <div class="form-signup none" id="signup">
+            <form action="#" method="get">
+                <div>
+                <span>نام</span>
+                <input type="text" name="full-name">
+                </div>
+
+                <div>
+                    <span>ایمیل</span>
+                    <input type="email" name="email">
+                </div>
+            
+                <div>
+                    <span>شماره همراه</span>
+                    <input type="number" name="phone-number">
+                </div>
+               
+                <div>
+                    <span>پسورد</span>
+                    <input type="password" name="password">
+                </div>
+                
+                <button>ثبت نام</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../main.js"></script>
+</body>
+</html>
